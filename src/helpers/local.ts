@@ -1,10 +1,14 @@
 export let local: Storage;
 
+try {
 if (
   typeof window !== "undefined" &&
   typeof window.localStorage !== "undefined"
 ) {
   local = window.localStorage;
+}
+} catch (e) {
+  console.log('local storage not available');
 }
 
 export const setLocal = (key: string, data: any) => {
