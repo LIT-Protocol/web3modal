@@ -4,6 +4,8 @@ export let local: Storage;
 
 if (isLocalStorageAvailable()) {
   local = window.localStorage;
+} else {
+  console.log('local storage not available');
 }
 
 export const setLocal = (key: string, data: any) => {
